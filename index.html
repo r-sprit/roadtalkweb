@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoadTalk Web Application</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="css/plugins/c3/c3.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+</head>
+
+<body class="top-navigation" >
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg" style="height: 100% !important;">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
+                        data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <i class="fa fa-reorder"></i>
+                </button>
+                <a href="#" class="navbar-brand">RoadTalkWeb</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav  nav-tabs">
+                    <li>
+                        <a aria-expanded="false" data-toggle="tab" href="#basic_main_page">Home</a>
+                    </li>
+                    <li>
+                        <a aria-expanded="false" data-toggle="tab"
+                           id="a_data_perms_main_page"
+                           href="#data_perms_main_page">Data Summary</a>
+                    </li>
+                    <li>
+                        <a aria-expanded="false" data-toggle="tab"
+                           id="a_road_level_statistics"
+                           href="#road_level_statistics">Road Statistics</a>
+                    </li>
+
+                    <li>
+                        <a aria-expanded="false" data-toggle="tab"
+                           id="a_car_level_statistics"
+                           href="#car_level_statistics">Car Statistics</a>
+                    </li>
+
+                    <li>
+                        <a aria-expanded="false" data-toggle="tab"
+                           id="a_envt_level_statistics"
+                           href="#envt_level_statistics">Environment Statistics</a>
+                    </li>
+
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li style="padding: 10px; padding-right: 50px;">
+                            <b>Temperature 12 Degrees.</b>
+                        </li>
+                        <li style="padding: 10px; padding-right: 50px;">
+                            <form class="form-inline">
+                            <select class="form-control" id="highway_names_selector"></select>
+
+                                <select class="selectpicker" id="cars_list_selecter"
+                                        data-size="5" data-width="125px">
+                                </select>
+                            </form>
+                        </li>
+                    </ul>
+
+                </ul>
+
+
+            </div>
+        </nav>
+
+            <!--
+        <div class="sidebar-panel" style="height: 700px;">
+            <div>
+                <h4>List of Neighboring Vehicles <span class="badge badge-info pull-right">16</span></h4>
+            </div>
+            <div class="m-t-md" id="vehiclesList" style="height: 400px; overflow: auto;  background-color: #fff;">
+                <h4>Statistics</h4>
+
+            </div>
+
+        </div>
+        -->
+        </div>
+        <div class="wrapper wrapper-content">
+        <div class="container">
+
+                <div class="tab-content">
+
+                    <div id="basic_main_page" class="tab-pane fade in active">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12" id="news-updates">
+                                        <h1>Updated News (서울특별시 강남구)
+                                            <i class="fa fa-plus" aria-hidden="true"></i></h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h1>Crowd Sourcing Images
+                                        <i class="fa fa-plus" aria-hidden="true"></i></h1>
+                                    <div class="row">
+                                        <div class="col-lg-3"><img src="./img/conjustion1.jpg" width="125" height="70" /></div>
+                                        <div class="col-lg-9"><span class="text-large-size">Person 1: Seoul Gangnam-gu at 00-00-00 00:00</span></div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-3"><img src="./img/conjustion2.jpg" width="125" height="70" /></div>
+                                        <div class="col-lg-9"><span class="text-large-size">Person 1: Seoul Gangnam-gu at 00-00-00 00:00</span></div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-3"><img src="./img/conjustion3.jpg" width="125" height="70" /></div>
+                                        <div class="col-lg-9"><span class="text-large-size">Person 3: Seoul Gangnam-gu at 00-00-00 00:00</span></div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-3"><img src="./img/conjustion4.jpg" width="125" height="70" /></div>
+                                        <div class="col-lg-9"><span class="text-large-size">Person 4: Seoul Gangnam-gu at 00-00-00 00:00</span></div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-11 text-right">
+                                        <button type="button" class="btn btn-primary btn-lg">Click here to add picture</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1>Welcome to Main Page</h1>
+                                <br /><br /><br /><br /><br /><br />
+                                <div>
+                                <div class="row">
+                                    <div class="col-lg-4">&nbsp;</div>
+                                    <div class="col-lg-4 text-center"><img class="my_page_emotions"
+                                            id="animate" src="./img/car_02.png" width="150" height="120"  /></div>
+                                    <div class="col-lg-4">&nbsp;</div>
+                                </div>
+                                <br /><br />
+                                <div class="row">
+                                    <div class="col-lg-4 text-right"><img class="my_page_emotions"
+                                            src="./img/car_02.png" width="150" height="120" /></div>
+                                    <div class="col-lg-4 text-center"><img class="my_page_emotions"
+                                            src="./img/car_02.png" width="150" height="120" /></div>
+                                    <div class="col-lg-4 text-left"><img class="my_page_emotions"
+                                            src="./img/car_02.png" width="150" height="120" /></div>
+                                </div>
+                                <br /><br /><br /><br /><br /><br /><br />
+                                <div class="row">
+                                    <div class="col-lg-4">&nbsp;</div>
+                                    <div class="col-lg-4 text-center"><img class="my_page_emotions"
+                                            id="animate1" src="./img/car_02.png" width="150" height="120" /></div>
+                                    <div class="col-lg-4">&nbsp;</div>
+                                </div>
+
+                            </div>
+                            </div>
+
+
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1>Driving Pattern</h1>
+                                <div id="pca_scatter_graph"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="danger_level_pie_graph"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="data_perms_main_page" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1>Road Safety</h1>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">RSI Road Safety Index</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins text-success" id="road_saftey_index_value">No Data</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">ASI Accident Severity Index</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins text-success" id="area_saftey_index_value">No Data</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold"> ABT Accidents By Type</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins text-success" id="abt_saftey_index_value">No Data</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <h1>Road Traffic</h1>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">Average Speed</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins text-success" id="current_road_avg_speed">No Data</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">Free Flow Speed</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="current_free_flow_speed">70 KM/h</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">Congestion Level</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins text-danger" id="data_summary_congestion_value">No Data</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h1>Live Driving Pattern</h1>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">My Driving Style</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="current_driving_skills">No Data</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h2 class="font-bold">My Driving Skill</h2>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="current_driving_style">No Data</h1>
+                                    </div>
+                                </div>
+
+                                <div class="ibox float-e-margins text-center">
+                                    <img src="img/car_01.png" width="150" height="120" />
+                                    <img src="img/car_02.png" width="150" height="120" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="road_level_statistics" class="tab-pane fade">
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <span class="label label-success pull-right">Weekly</span>
+                                        <h5>Speed</h5>
+                                    </div>
+
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="average_speed">Loading</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <span class="label label-success pull-right">Monthly</span>
+                                        <h5>Speed</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="average_acc">Loading</h1>
+                                <!--
+                                <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
+                                <small>Average Speed</small>
+                                -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">Today</span>
+                            <h5>Speed</h5>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h1 class="no-margins" id="min_speed">Loading</h1>
+                                    <!--
+                                    <div class="font-bold text-navy">44% <i class="fa fa-level-up"></i>
+                                        <small>Rapid pace</small></div>
+                                        -->
+                                </div>
+                                <div class="col-md-6">
+                                    <h1 class="no-margins" id="max_speed">Loading</h1>
+                                    <!--
+                                    <div class="font-bold text-navy">22% <i class="fa fa-level-up"></i>
+                                    <small>Slow pace</small></div>
+                                    -->
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                            <div class="col-md-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Traffic Congestion</h5>
+                        </div>
+                        <div class="ibox-content no-padding text-danger">
+                            <div class="flot-chart m-t-lg" style="height: 55px;">
+                                <div class="flot-chart-content" id="flot-chart1"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                        </div>
+
+                        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Road Speed and acceleration Statistics</h5>
+
+                            </div>
+                            <div class="ibox-content">
+                                <div id="morris-one-line-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+                    <div id="car_level_statistics" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <span class="label label-success pull-right">Car</span>
+                                        <h5>Car Data</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <img src="img/car_01.png" width="60" height="40" />
+                                        <img src="img/car_02.png" width="60" height="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>Speed</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="current_speed_single_car">Loading</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>Acceleration </h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="average_acc_single_car">Loading</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>Density Based TCI</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <h1 class="no-margins" id="current_tci_single_car">Loading</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <span class="label label-primary pull-right">Today</span>
+                                <h5>Today's Speed History</h5>
+                            </div>
+                            <div class="ibox-content">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h1 class="no-margins" id="min_speed_single_car">Loading</h1>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="no-margins" id="max_speed_single_car">Loading</h1>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Simple one line Example </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#">Config option 1</a>
+                                        </li>
+                                        <li><a href="#">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div id="morris-one-line-chart_single_car"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+                    <div id="envt_level_statistics" class="tab-pane fade">
+                        <div class="row"><h1>Hourly Road Safety</h1></div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>RSI</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-hour-rsi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ASI </h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-hour-asi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ABT </h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-hour-abt"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"><h1>Weekly Road Safety</h1></div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>RSI</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-week-rsi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ASI </h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-week-asi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ABT</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-week-abt"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"><h1>Monthly Road Safety</h1></div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>RSI</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-month-rsi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ASI </h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-month-asi"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>ABT</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div id="morris-bar-chart-month-abt"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+
+    <!-- ChartJS-->
+    <script src="js/plugins/d3/d3.min.js"></script>
+    <script src="js/plugins/c3/c3.min.js"></script>
+
+
+    <script src="js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="js/plugins/morris/morris.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <!-- Peity demo -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <script src="js/demo/morris-demo.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+    <script src="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.js"></script>
+    <style type="text/css">
+    #animate, #animate1 {
+        width: 150px;
+        height: 120px;
+        position: absolute;
+    }
+    </style>
+
+    <script>
+        function myMove(element_id, starnd) {
+            var elem = document.getElementById(element_id);
+            var pos = 1;
+            var id = setInterval(frame, 5);
+            frame();
+            function frame() {
+
+                if (pos == -20) { starnd = 2 }
+                if (pos == 50) { starnd = 1 }
+                if (starnd == 2) { pos++; }
+                else if (starnd == 1) { pos--; }
+                elem.style.left = pos + 'px';
+                elem.style.top = '-100px';
+
+            }
+        }
+        myMove("animate", 1);
+        myMove("animate1", 2);
+        $(document).ready(function() {
+
+
+            $.getJSON("http://14.63.195.20:1167/polls/?callback=?", function(data){
+                console.log(data);
+
+                c3.generate({
+                    bindto: '#pca_scatter_graph',
+                    data:{
+                        xs:{
+                            data1: 'data1_x'
+                        },
+                        columns: [
+                            data.datax,
+                            data.datay
+                        ],
+                        colors:{
+                            data1: '#1ab394',
+                            data2: '#BABABA'
+                        },
+                        type: 'scatter',
+                        point: {
+                            r: 100
+                        }
+                    }
+                });
+
+                c3.generate({
+                    bindto: '#danger_level_pie_graph',
+                    data:{
+                        columns: data.freqarr,
+                        colors:{
+                            data1: '#1ab394',
+                            data2: '#BABABA'
+                        },
+                        type : 'pie'
+                    }
+                });
+
+            });
+
+
+
+
+
+
+
+
+
+
+            var d1 = [[1262304000000, 6], [1264982400000, 3057], [1267401600000, 20434], [1270080000000, 31982], [1272672000000, 26602], [1275350400000, 27826], [1277942400000, 24302], [1280620800000, 24237], [1283299200000, 21004], [1285891200000, 12144], [1288569600000, 10577], [1291161600000, 10295]];
+            var d2 = [[1262304000000, 5], [1264982400000, 200], [1267401600000, 1605], [1270080000000, 6129], [1272672000000, 11643], [1275350400000, 19055], [1277942400000, 30062], [1280620800000, 39197], [1283299200000, 37000], [1285891200000, 27000], [1288569600000, 21000], [1291161600000, 17000]];
+
+            var data1 = [
+                { label: "Data 1", data: d1, color: '#17a084'},
+                { label: "Data 2", data: d2, color: '#127e68' }
+            ];
+            $.plot($("#flot-chart1"), data1, {
+                xaxis: {
+                    tickDecimals: 0
+                },
+                series: {
+                    lines: {
+                        show: true,
+                        fill: true,
+                        fillColor: {
+                            colors: [{
+                                opacity: 1
+                            }, {
+                                opacity: 1
+                            }]
+                        },
+                    },
+                    points: {
+                        width: 0.1,
+                        show: false
+                    },
+                },
+                grid: {
+                    show: false,
+                    borderWidth: 0
+                },
+                legend: {
+                    show: false,
+                }
+            });
+
+
+
+            var lineOptions = {
+                responsive: true
+            };
+
+
+            //var ctx = document.getElementById("lineChart").getContext("2d");
+            // new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
+
+        });
+    </script>
+
+</body>
+
+</html>
